@@ -1,0 +1,21 @@
+package Actions;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class CommandTranslator
+{
+
+	/**
+	 * @param args
+	 */
+
+		public static void acceptCommands(String command)
+		{
+			Pattern tomatch = Pattern.compile("[DL][QKNRBP]");
+			Matcher piece = tomatch.matcher(command);
+			System.out.println(piece.find());
+		}
+
+}

@@ -1,0 +1,21 @@
+package Actions;
+
+import Parts.*;
+
+public class PlayGame 
+{
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) 
+	{
+		SimpleBoard board = new SimpleBoard();
+		System.out.print(board.toString());
+		CommandTranslator.acceptCommands("Kda4");
+		CommandTranslator.acceptCommands("a4 g6");
+		CommandTranslator.acceptCommands("aew");
+
+	}
+
+}

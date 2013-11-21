@@ -1,0 +1,28 @@
+package Actions;
+
+import java.util.ArrayList;
+
+import Parts.*;
+
+public class PlayGame 
+{
+
+	/**
+	 * @param args
+	 */
+	public static ArrayList<Piece> Pieces;
+	public static void main(String[] args) 
+	{
+		Pieces = new ArrayList<Piece>();
+		SimpleBoard board = new SimpleBoard();
+		System.out.print(board.toString());
+		System.out.println();
+		System.out.println(CommandTranslator.acceptCommands("Kde1"));
+		System.out.println(CommandTranslator.acceptCommands("Rdh1"));
+		//System.out.println(CommandTranslator.acceptCommands("a4 f6"));
+		System.out.println(CommandTranslator.acceptCommands("e4 f7"));
+		System.out.println(CommandTranslator.acceptCommands("e1 h1 g1 f1"));
+
+	}
+
+}

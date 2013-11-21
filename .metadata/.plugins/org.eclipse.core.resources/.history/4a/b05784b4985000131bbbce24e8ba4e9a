@@ -1,0 +1,52 @@
+package Actions;
+
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class CommandTranslator
+{
+
+	/**
+	 * @param args
+	 */
+
+		public static String acceptCommands(String command)
+		{
+			String result = "";
+			Pattern tomatch = Pattern.compile("[QKNRBP][dl][a-g][1-8]");
+			Matcher piece = tomatch.matcher(command);
+			if(piece.find())
+			{
+				result = placePiece(command);
+			}
+			tomatch = Pattern.compile("[a-g][1-8] [a-g][1-8]");
+			if(piece.find())
+			{
+				result = movePiece(command);
+			}
+			if(result.equals(""))
+			{
+				result = otherMove(command);
+			}
+					
+					return result;
+		}
+		
+		private static String placePiece(String command)
+		{
+		
+			return "piece placed";
+		}
+		private static String movePiece(String command)
+		{
+		
+			return "piece moved";
+		}
+		private static String otherMove(String command)
+		{
+			
+			return "piece moved oddly";
+		}
+
+}
